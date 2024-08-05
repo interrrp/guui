@@ -1,0 +1,21 @@
+[project]
+name = "guui"
+description = "An atom-sized GUI library."
+version = "0.1.0"
+requires-python = "==3.12.*"
+
+[tool.pdm.dev-dependencies]
+dev = ["pytest>=8.3.2"]
+
+[tool.pdm.scripts]
+sample = { cmd = "python -m sample" }
+test = { cmd = "python -m pytest" }
+
+[tool.ruff]
+line-length = 119
+select = ["ALL"]
+lint.ignore = [
+    "D100", # Allow missing docstring in public modules
+    "D107", # Allow missing docstring in `__init__`s
+]
+lint.pydocstyle.convention = "google"
