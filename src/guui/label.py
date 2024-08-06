@@ -8,13 +8,13 @@ from guui.widget import Widget
 class Label(Widget):
     """A widget that displays text."""
 
-    def __init__(self, text: str, x: int, y: int, font_size: int = 12) -> None:
+    def __init__(self, text: str, x: int = 0, y: int = 0, font_size: int = 12) -> None:
         """Initialize this label.
 
         Args:
             text: The text to display.
-            x: The horizontal position of this label in pixels.
-            y: The vertical position of this label in pixels.
+            x: The horizontal position of this label in pixels. Defaults to ``0``.
+            y: The vertical position of this label in pixels. Defaults to ``0``.
             font_size: The size of the font in pixels. Defaults to ``12``.
         """
 
