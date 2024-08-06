@@ -1,6 +1,4 @@
-from guui.app import App
-from guui.label import Label
-from guui.layout import StackLayout
+from guui import App, Label, StackLayout
 
 if __name__ == "__main__":
     app = App("Guui Sample")
