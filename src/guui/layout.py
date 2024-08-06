@@ -22,38 +22,32 @@ class StackLayout(Widget):
 
         self._orientation: Orientation = orientation
         self._gap = gap
-        self._widgets: list[Widget] = []
 
     @override
     def draw(self) -> None:
-        for index, widget in enumerate(self._widgets):
+        for index, widget in enumerate(self.children):
             if self._orientation == "horizontal":
-                widget.x = self.x + sum(widget.width for widget in self._widgets[:index]) + index * self._gap
+                widget.x = self.x + sum(widget.width for widget in self.children[:index]) + index * self._gap
                 widget.y = self.y
             elif self._orientation == "vertical":
                 widget.x = self.x
-                widget.y = self.y + sum(widget.height for widget in self._widgets[:index]) + index * self._gap
+                widget.y = self.y + sum(widget.height for widget in self.children[:index]) + index * self._gap
             widget.draw()
 
-    def add(self, widget: Widget) -> None:
-        """Add a widget to this stack layout.
-
-        Args:
-            widget: The widget to add.
-        """
-
-        self._widgets.append(widget)
+    @override
+    def add_child(self, widget: Widget) -> None:
+        super().add_child(widget)
         self._update_size()
 
     def _update_size(self) -> None:
         """Update this widget's width and height properties."""
 
         if self._orientation == "horizontal":
-            self.width = sum(widget.width for widget in self._widgets) + (len(self._widgets) - 1) * self._gap
-            self.height = max(widget.height for widget in self._widgets)
+            self.width = sum(widget.width for widget in self.children) + (len(self.children) - 1) * self._gap
+            self.height = max(widget.height for widget in self.children)
         elif self._orientation == "vertical":
-            self.width = max(widget.width for widget in self._widgets)
-            self.height = sum(widget.height for widget in self._widgets) + (len(self._widgets) - 1) * self._gap
+            self.width = max(widget.width for widget in self.children)
+            self.height = sum(widget.height for widget in self.children) + (len(self.children) - 1) * self._gap
 
     @property
     def orientation(self) -> Orientation:
