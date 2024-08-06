@@ -13,9 +13,12 @@ test = { cmd = "python -m pytest" }
 
 [tool.ruff]
 line-length = 119
-select = ["ALL"]
+lint.select = ["ALL"]
 lint.ignore = [
-    "D100", # Allow missing docstring in public modules
-    "D107", # Allow missing docstring in `__init__`s
+    "D100",   # Allow missing docstring in public modules
+    "D107",   # Allow missing docstring in `__init__`s
+    "D202",   # Allow blank lines after function docstring
+    "COM812", # Conflicts with the formatter
+    "ISC001", # Conflicts with the formatter
 ]
 lint.pydocstyle.convention = "google"
