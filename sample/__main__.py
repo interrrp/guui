@@ -1,2 +1,5 @@
+from guui.app import App
+
 if __name__ == "__main__":
-    print("Hello, world!")
+    app = App("Guui Sample")
+    app.start()

@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:669250d3167eb7c0489e890919d67c020400e4a42e769e617057a69347433c21"
+content_hash = "sha256:b5c6140c22e175cb3e24a9b962840e0307b5f3c1522279e226e06351fcd8c067"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
@@ -53,6 +53,17 @@ groups = ["dev"]
 files = [
     {file = "pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669"},
     {file = "pluggy-1.5.0.tar.gz", hash = "sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"},
+]
+
+[[package]]
+name = "pyglet"
+version = "2.0.16"
+requires_python = ">=3.8"
+summary = "pyglet is a cross-platform games and multimedia package."
+groups = ["default"]
+files = [
+    {file = "pyglet-2.0.16-py3-none-any.whl", hash = "sha256:332593c8c14fa2c545a0da3da2f99b8c75c6e822a90cd4ea8e239fad658ff5a1"},
+    {file = "pyglet-2.0.16.tar.gz", hash = "sha256:af007b22ff5f302edeb2a06d749cfef53f52e67f1e52f0b2babd840d37193482"},
 ]
 
 [[package]]

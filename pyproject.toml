@@ -3,9 +3,8 @@ name = "guui"
 description = "An atom-sized GUI library."
 version = "0.1.0"
 requires-python = "==3.12.*"
-
-[tool.pdm.dev-dependencies]
-dev = ["pytest>=8.3.2"]
+dependencies = ["pyglet>=2.0.16"]
+optional-dependencies = { dev = ["pytest>=8.3.2"] }
 
 [tool.pdm.scripts]
 sample = { cmd = "python -m sample" }
@@ -21,4 +20,8 @@ lint.ignore = [
     "COM812", # Conflicts with the formatter
     "ISC001", # Conflicts with the formatter
 ]
+per-file-ignores = { "tests/**/*.py" = [
+    "D103",
+    "S101",
+] } # Allow missing docstring in public functions and asserts in tests
 lint.pydocstyle.convention = "google"
